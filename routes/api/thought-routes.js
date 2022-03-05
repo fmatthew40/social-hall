@@ -18,7 +18,7 @@ router
     .get(getThoughts)
 // thought routes connected to thought Id
 router
-    .route('/:thoughtId')
+    .route('/:id')
     .get(getThoughtById)
     .put(updateThought)
     .delete(deleteThought)

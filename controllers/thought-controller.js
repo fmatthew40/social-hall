@@ -54,7 +54,7 @@ addNewThought({ body }, res) {
 },
 
 updateThought({ params, body }, res) {
-  User.findOneAndUpdate({ _id: params.id }, body, { new: true })
+  Thought.findOneAndUpdate({ _id: params.id }, body, { new: true })
   .then(dbThoughtData => {
       if (!dbThoughtData) {
           res.status(404).json({ message: 'Thought not found!'}); 
@@ -66,7 +66,7 @@ updateThought({ params, body }, res) {
 },
 
 deleteThought({ params }, res) {
-  User.findOneAndDelete({ _id: params.id })
+  Thought.findOneAndDelete({ _id: params.id })
   .then(dbThoughtData => {
       if (!dbThoughtData) {
           res.status(404).json({ message: 'Thought not found!' });
