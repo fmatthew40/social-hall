@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 
-// add a date formatter path here
+// const dateFormatter = require('../utils/dateformatter');
+const momentjs = require('moment');
 
 
 const ReactionSchema = new Schema({
@@ -21,7 +22,8 @@ const ReactionSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        // getter method to format timestamp
+        // get: (createdAtVal) => dateFormatter(createdAtVal)
+        get: (createdAtVal) => momentjs(createdAtVal).format('MMMM Do, YYYY [at] hh:mm a')
     }
     },
 {
@@ -42,7 +44,8 @@ const ThoughtSchema = new Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        // Use a getter method to format the timestamp on query
+        // get: (createdAtVal) => dateFormatter(createdAtVal)
+        get: (createdAtVal) => momentjs(createdAtVal).format('MMMM Do, YYYY [at] hh:mm a')
     },
     username: {
         type: String, 
