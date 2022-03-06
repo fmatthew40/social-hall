@@ -77,6 +77,32 @@ deleteThought({ params }, res) {
   .catch(err => res.status(400).json(err));
 },
 
+postReaction({ params, body }, res) {
+  Thought.findOneAndUpdate(
+    { _id: params.thoughtId },
+    { $push: {reactions: body }},
+    { new: true }
+  )
+  .then(dbReactionData => {
+    if (!dbReactionData) {
+      res.status(404).json({ message: 'Not found!'});
+      return; 
+    }
+    res.json(dbReactionData);
+  })
+  .catch(err => res.json(err));
+},
+
+deleteReaction({ params }, res) {
+  Thought.findOneAndUpdate(
+    { _id: params.thoughtId },
+    { $pull: { reactions: { reactionId: params.reactionId }}},
+    { new: true }
+  )
+  .then(dbReactionData => res.json(dbReactionData))
+  .catch(err => res.json(err));
+}
+
 };
 
 module.exports = thoughtController;
