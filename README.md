@@ -4,14 +4,16 @@
 
   ## Table of Contents
   1.  [License](#license)
-  2.  [Link to Demonstration Video](#Link-to-Demonstration-Video)
+  2.  [Link to Demonstration Videos](#Link-to-Demonstration-Videos)
   3.  [Description](#description)
   4.  [Usage](#usage)
   5.  [Contributing](#contributing)
   6.  [Questions](#questions)
 
- ## Link to Demonstration Video
+ ## Link to Demonstration Videos
+ Part 1 (api/users and /api/users/:userId/friends/:friendId): https://youtu.be/aLzyKYOk12Q
 
+ Part 2 (api/thoughts and /api/thoughts/:thoughtId/reactions): https://youtu.be/LGmEbR9GFF0
 
  ## Description
  To start, I installed npm express.  Express.js allowed me to create and run a local server. I also installed mongoose.
@@ -25,7 +27,7 @@
  The project's intended use is to act as a social network.  It is the backend of a social network.  It allows users to add friends, thoughts, and reactions.  
 
  ## Contributing 
- Matthew Foster
+ Contributions are not being accepted at this time.
 
  ## Questions
  If you have any questions, feel free to email me at fmatthew40@gmail.com. 
